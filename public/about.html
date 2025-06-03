@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet our development team powering ECO4ROWTH">
+  <meta name="keywords" content="Team, Makers Valley, Eco4rowth, Developers">
+  <meta name="author" content="Stevo Asante">
+  <title>Meet Our Team | ECO4ROWTH</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="design.css">
+  <!-- JavaScript -->
+  <script src="getData.js" defer></script>
+</head>
+
+<body>
+  <!-- STICKY NAVIGATION BAR -->
+  <nav class="nav-wrapper" id="navbar">
+    <div class="nav-content">
+
+      <!-- LOGO ON THE LEFT -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="ECO4ROWTH Logo" class="logo-image" />
+        </a>
+      </div>
+
+      <!-- MENU LINKS CENTERED -->
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">Team</a></li>
+        <li class="dropdown">
+          <a href="goals.html">
+            Our Goals <span class="dropdown-arrow">&#9662;</span>
+          </a>
+          <ul class="dropdown-content">
+            <li><a href="#goal-climate">Climate Action</a></li>
+            <li><a href="#goal-energy">Clean Energy</a></li>
+            <li><a href="#goal-hunger">Zero Hunger</a></li>
+          </ul>
+        </li>
+        <li><a href="WD.html">Water Demands</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      
+      </ul>
+
+      <!-- SEARCH BAR -->
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search..." />
+        <button id="search-button">SEARCH</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TEAM SECTION CONTENT -->
+  <main>
+    <h2 id="heading">Meet Our Dedicated Team</h2>
+    <p style="text-align:center; font-family: Literata, serif; max-width: 800px; margin: 0 auto;">
+      Click on any team member to learn about their role, background, and how they contribute to the ECO4ROWTH mission.
+    </p>
+
+    <!-- TEAM GRID DYNAMICALLY GENERATED VIA getData.js -->
+    <section class="team-section">
+      <!-- Cards are inserted here via JavaScript based on app.json -->
+    </section>
+  </main>
+
+  <!-- POPUP FOR TEAM DETAILS -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <button id="close-popup" class="close-popup" aria-label="Close popup">&times;</button>
+      <img id="popup-image" src="" alt="Team Member">
+      <h2 id="popup-name"></h2>
+      <p id="popup-bio"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER SECTION -->
+  <footer>
+    <p>
+      © 2025 ECO4ROWTH - Group 4 in partnership with EWB<br><br>
+      <a id="CULink" href="contact.html">Contact us</a>
+    </p>
+  </footer>
+</body>
+
+</html>

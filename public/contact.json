@@ -1,0 +1,12 @@
+{
+    "contactFormSubmissions": [
+        {
+            "firstName": "Cristiano",
+            "lastName": "Ronaldo",
+            "email": "cr7@example.co.uk",
+            "message": "I have a question about your services.",
+            "contactReason": "General",
+            "timestamp": "2024-12-07T08:00:00Z"
+        }
+    ]
+}

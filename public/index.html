@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Smart Water Monitoring System Homepage" />
+  <meta name="keywords" content="Makers Valley, Water, Energy, Sustainability" />
+  <meta name="author" content="Stevo Asante" />
+  <title>ECO4ROWTH - Smart Water Monitoring</title>
+
+  <!-- Link to the main CSS & JS files -->
+  <link rel="stylesheet" href="design.css" /> 
+  <script src="getData.js" defer></script> 
+</head>
+
+<body>
+  <!-- HERO SECTION (BANNER GOES FIRST) -->
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <h2>Empowering Clean Water in Makers Valley</h2>
+      <p>Real-time insights, leak alerts, and community energy management — all in one platform.</p>
+      <a href="WD.html" class="hero-btn">View Water Dashboard</a>
+    </div>
+  </section>
+
+  <!-- NAVIGATION SECTION (Appears below banner, sticks on scroll) -->
+  <nav class="nav-wrapper" id="navbar">
+    <div class="nav-content">
+      <!-- LOGO ON THE LEFT -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Logo" class="logo-image" />
+        </a>
+      </div>
+
+            <!-- HAMBURGER (Mobile) -->
+      <span id="hamburger" class="hamburger" aria-label="Toggle menu">&#9776;</span>
+
+      <!-- CENTERED MENU -->
+      <ul class="menu" id="menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">Team</a></li>
+        <li class="dropdown">
+          <a href="goals.html" >
+            Our Goals <span class="dropdown-arrow">&#9662;</span>
+          </a>
+          <ul class="dropdown-content">
+            <li><a href="climate.html">Climate Action</a></li>
+            <li><a href="energy.html">Clean Energy</a></li>
+            <li><a href="hunger.html">Zero Hunger</a></li>
+          </ul>
+        </li>
+        <li><a href="WD.html">Water Demands</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      
+      </ul>
+
+      <!-- SEARCH BAR ON THE RIGHT -->
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search..." />
+        <button id="search-button">SEARCH</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT SECTION -->
+  <main>
+    <!-- HEADING CONTENT -->
+    <h2>Welcome To ECO4ROWTH</h2>
+    <p>EcoGrowth drives impactful sustainable development initiatives, connecting innovative projects with resources and partners committed to positive global change. 
+        <br> Join us in making a lasting difference!</p>
+
+    <!-- ARTICLE WITH 2 FADE-IN SECTIONS -->
+    <article>
+        <!-- VIDEO SECTION -->
+        <section  class="sec fade-in">
+          <h3>Here is a video.</h3>
+          <video id="HomeVideo" src="assets/The SDG Report 2024.mp4" controls></video>
+        </section>
+
+        <br>
+
+      <!-- MISSION STATEMENT SECTION -->
+      <section class="sec fade-in">
+        <h3>Our Mission & Values</h3>
+        <p>
+        EcoGrowth is committed to creating a sustainable future by empowering communities, fostering innovation, and promoting environmental responsibility. 
+        Our core values include transparency, collaboration, and community engagement, guiding every project we undertake to make a lasting positive impact.
+        </p>
+      </section>
+
+<br>
+
+      <section id="EWBLink" class="sec fade-in">
+        <h3>Join Our Sustainability Movement</h3>
+        <p>
+        To learn more or support the ongoing efforts in South Africa by Makers Valley Partnership and Engineers Without Borders South Africa, 
+        please visit their site below.
+        </p>
+        <a id="UNLink" href="https://www.ewbsa.org" target="_blank">
+            Engineers Without Borders South Africa
+        </a>
+    </section>
+    
+</article>
+</main>
+<br>
+<br>
+
+  <!-- FOOTER SECTION -->
+  <footer>
+    <p>
+      © 2025 ECO4ROWTH - Group 4 in partnership with EWB <br /><br />
+      <a id="CULink" href="contact.html">Contact us</a>
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Our Sustainable Development Goals" />
+    <meta name="keywords" content="Sustainability, SDGs, Water, Energy, Climate" />
+    <meta name="author" content="Stevo Asante" />
+    <title>Zero Hunger | ECO4ROWTH</title>
+
+    <!-- Styles and scripts -->
+    <link rel="stylesheet" href="design.css" />
+    <script src="getData.js" defer></script>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav-wrapper" id="navbar">
+        <div class="nav-content">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Logo" class="logo-image" />
+                </a>
+            </div>
+
+            <!-- HAMBURGER (Mobile) -->
+            <span id="hamburger" class="hamburger" aria-label="Toggle menu">&#9776;</span>
+
+            <!-- MENU -->
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Team</a></li>
+                <li class="dropdown">
+                    <a href="goals.html" class="active">
+                        Our Goals <span class="dropdown-arrow">&#9662;</span>
+                    </a>
+                    <ul class="dropdown-content">
+                        <li><a href="climate.html">Climate Action</a></li>
+                        <li><a href="energy.html">Clean Energy</a></li>
+                        <li><a class="active" href="hunger.html">Zero Hunger</a></li>
+                    </ul>
+                </li>
+                <li><a href="WD.html">Water Demands</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+            <!-- SEARCH BAR -->
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search..." />
+                <button id="search-button">SEARCH</button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- GOALS SECTION (Loaded Dynamically) -->
+    <main>
+        <section class="section-content fade-in">
+            <h2>Our Sustainable Goals</h2>
+            <p>
+                These are the 3 goals we’re tackling in Makers Valley with a tech-driven, community-first approach. <br>
+                These goals are aligned with the UN’s 2030 Sustainable Development framework.
+            </p>
+        </section>
+
+        <!-- This is where the goal cards will appear via JS -->
+        <div class="goals-flex-wrapper">
+            <!-- Two smaller goal cards go here -->
+            <div class="goals-left">
+                <div id="goal-climate"></div>
+                <div id="goal-energy"></div>
+            </div>
+            <!-- One big goal card goes here -->
+            <div class="goals-right">
+                <div id="goal-hunger"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2025 ECO4ROWTH - Group 4 in partnership with EWB <br /><br />
+            <a id="CULink" href="contact.html">Contact us</a>
+        </p>
+    </footer>
+</body>
+
+</html>

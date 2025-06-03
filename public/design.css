@@ -1,0 +1,782 @@
+/* =============================================================
+   ✅ FONT + BRAND SETUP
+   ============================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Literata:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --primary-color: #003087;
+  --secondary-color: #FFFFFF;
+  --highlight-yellow: #FFCC00;
+  --black: #000000;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+/* Typography - clear and consistent structure */
+h1, h2 {
+  font-family: 'Michroma', sans-serif;
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h3, h4, p {
+  font-family: 'Literata', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+
+#EWBLink {
+    text-align: center;
+align-items: center;
+justify-content: center;
+
+}
+#UNLink:hover {
+  color: var(--highlight-yellow);
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* =============================================================
+   STICKY NAV BAR WITH LOGO, CENTERED LINKS, RIGHT SEARCH
+   ============================================================= */
+.nav-wrapper {
+  background-color: var(--primary-color);
+  position: sticky; /* Sticky navbar */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 50px;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  list-style: none;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.menu a.active,
+.menu a:hover {
+  background-color: var(--highlight-yellow);
+  color: var(--black);
+  border-radius: 5px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 10px;
+}
+
+#search-bar {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--black);
+}
+
+#search-button {
+  background-color: var(--highlight-yellow);
+  color: var(--black);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* --- Hamburger icon base style --- */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--secondary-color);
+  background: none;
+  border: none;
+  transition: color 0.3s;
+  /* The hamburger is hidden by default, shown on smaller screen sizes */
+}
+
+/* When the hamburger is open, shows an "X" instead of the three lines */
+.hamburger.open::before {
+  content: '\2715'; /* Unicode X */
+  color: var(--highlight-yellow);
+  font-size: 2rem;
+  transition: color 3.3s;
+}
+.hamburger.open {
+  color: transparent; /* Hide the three lines when open */
+}
+
+/* Mobile Search Overlay (NEED TO EDIT) */
+.search-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-overlay.active {
+  display: flex;
+}
+
+.search-overlay input {
+  width: 80%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* ==============================================================
+   RESPONSIVE STYLES
+   ============================================================= */
+/* Responsive: stack on medium screens */
+@media (max-width: 1024px) {
+  .nav-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+    .hamburger {
+    display: block;
+    align-self: flex-end;
+    margin-right: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .menu.active {
+    display: flex;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .search-container {
+    display: none;
+  }
+
+  .menu .search-link {
+    color: var(--highlight-yellow);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+    .team-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .team-member {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .goals-flex-wrapper {
+    flex-direction: column;
+  }
+  .goals-right, .goals-left {
+    flex: unset;
+  }
+}
+
+/* ------------------------------------------
+   HERO SECTION - Top banner intro
+------------------------------------------- */
+.hero {
+    font-family: michroma, sans-serif;
+    background-image: url('assets/header2.jpeg');
+    background-size: cover;     /* Ensures the image covers the hero area */
+    background-position: center;
+    text-align: center;
+    padding: 100px 20px;
+    color: #FFFFFF;
+    transition: background-size 0.6s cubic-bezier(.77,0,.18,1); /* Smooth zoom transition */
+    background-size: 100%;      /* Initial background size */
+}
+
+/* 
+  When the .zoomed class is added to .hero, 
+  the background image will zoom in to 115% of its original size.
+*/
+.hero.zoomed {
+  background-size: 115%;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero h2 {
+    color: var(--secondary-color);
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #c9c9d8;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    background-color: #FFCC00;
+    color: var(--black);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-family: michroma, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #FFFFFF;
+    color: var(--primary-color);
+}
+#HomeVideo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+/* =============================================================
+   FADE-IN ANIMATION FOR CONTENTS ON PAGES
+   ============================================================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  filter: blur(4px);
+  transition:
+    opacity 0.9s cubic-bezier(.77,0,.18,1),
+    transform 0.9s cubic-bezier(.77,0,.18,1),
+    filter 0.9s cubic-bezier(.77,0,.18,1);
+  will-change: opacity, transform, filter;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+
+/* =============================================================
+   CONTENT STYLING FOR SECTIONS
+   ============================================================= */
+.section-content {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-content h2 {
+  font-family: 'Michroma', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.section-content p {
+  font-family: 'Literata', serif;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* =============================================================
+   ORIGINAL PAGE SECTIONS (FOOTER, TEAM, GOALS, ETC)
+   ============================================================= */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+footer p {
+  margin: 0;
+  color: var(--secondary-color);
+  font-family: 'Literata', serif;
+  font-size: 14px;
+}
+
+#CULink {
+  color: var(--secondary-color);
+  font-family: 'Literata', serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#CULink:hover {
+  color: var(--highlight-yellow);
+  text-decoration: underline;
+}
+
+/* Team section layout: cards side by side on large screens */
+.team-section {
+  display: flex;                /* Arrange children in a row */
+  flex-wrap: wrap;              /* Allow wrapping to next line if needed */
+  gap: 2rem;                    /* Space between cards */
+  justify-content: center;      /* Center the cards horizontally */
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* Each team member card has the same size */
+.team-member {
+  flex: 1 1 220px;              /* Grow and shrink */
+  max-width: 260px;             /* Don't get too wide */
+  min-width: 200px;
+  background: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,48,135,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  transition: transform 0.2s;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.team-member p {
+  font-family: 'Michroma', sans-serif;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.team-member:hover {
+  transform: scale(1.1);
+  transition: 1.5s;
+}
+
+.team-image {
+  width: 100%;
+  max-width: 300px;
+  max-height: 350px;
+  cursor: zoom-in;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.popup-content img {
+  max-width: 300px;
+  max-height: 350px;
+  border-radius: 10px;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--black);
+}
+
+/* =============================================================
+   GOALS SECTION
+   ============================================================= */
+#Goal_Section {
+  margin: 100px auto;
+  background-color: #fcf6f6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 30px;
+  max-width: 2300px;
+  width: 100%;
+  min-height: 550px;
+}
+
+/* ==============================================================
+   GOALS - Dynamic styling for section stacks (NEED TO EDIT)
+   ============================================================= */
+
+   /* Goals page flex layout: 2 left, 1 big right */
+.goals-flex-wrapper {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.goals-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1 1 0;
+}
+
+.goals-right {
+  flex: 2 1 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.goal-card {
+  background: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,48,135,0.07);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Make the right card bigger */
+.goals-right .goal-card {
+  height: 100%;
+  min-height: 400px;
+}
+
+
+/* =============================================================
+   GOALS IMAGES SECTION
+   ============================================================= */
+
+.Goal_images {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.Goal_images:hover {
+  transform: scale(1.03);
+}
+
+.Goal_images img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+
+.Goal_images figcaption {
+  margin-top: 15px;
+  font-family: 'Literata', serif;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.Goal_images a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.Goal_images a:hover {
+  color: var(--highlight-yellow);
+}
+
+
+/* =============================================================
+   INDIVIDUAL CONTAINERS AND IMAGES (NEED TO EDIT)
+   ============================================================= */
+
+
+.Individual_Containers {
+  background-color: #fcf6f6;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #000;
+  border: 2px solid #757f49;
+  font-size: 1rem;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.Individual_Containers figure {
+  width: 100%;
+  text-align: center;
+}
+
+.Individual_Images {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.Individual_Containers p {
+  font-family: 'Literata', serif;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+
+.Individual_Sections {
+  margin: 100px auto;
+  background-color: #fcf6f6;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.Goal_images figure {
+  width: 100%;
+  display: block;
+}
+
+.Goal_images img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.Goal_images {
+  min-height: 200px;
+}
+.Goal_images {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px dashed lime;
+}
+
+.WDHeading {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem; /* space between p and iframe */
+  margin-top: 1rem;
+}
+
+.WDHeading p {
+  font-family: 'literata', serif;
+  color: var(--black);
+  font-size: 1.2rem;
+  flex: 1 1 0;
+  max-width: 400px;
+}
+
+.WDHeading iframe {
+  flex: 0 0 auto;
+  /* width and height already set inline */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+.WDArticle {
+  margin: 10px auto;
+  background-color: #fcf6f6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 30px;
+  padding: 30px;
+  max-width: 100%;
+  min-height: 550px;
+  border-top: 5px solid var(--primary-color);
+  border-bottom: 5px solid var(--primary-color);
+}
+
+.WDArticle img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.WDArticle section {
+  flex: 70%;
+  flex-wrap: wrap;
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 700px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* =============================================================
+   DROPDOWN MENU STYLING
+   ============================================================= */
+/* --- Dropdown arrow styling --- */
+.dropdown-arrow {
+  font-size: 0.8em;
+  margin-left: 6px;
+  transition: transform 0.3s;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Rotate the arrow when dropdown is open (on hover/focus) */
+.menu .dropdown:hover .dropdown-arrow,
+.menu .dropdown:focus-within .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* --- Dropdown menu for navigation --- */
+.menu .dropdown {
+  position: relative;
+}
+
+.menu .dropdown-content {
+  display: none;
+  position: absolute;
+  background: var(--secondary-color);
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,48,135,0.07);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  z-index: 100;
+  left: 0;
+  top: 100%;
+}
+
+.menu .dropdown:hover .dropdown-content,
+.menu .dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+.menu .dropdown-content li {
+  padding: 0;
+  margin: 0;
+}
+
+.menu .dropdown-content a {
+  display: block;
+  padding: 12px 18px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: background 0.2s;
+}
+
+.menu .dropdown-content a:hover {
+  background: var(--highlight-yellow);
+  color: var(--black);
+}
