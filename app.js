@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const port = 1942;
+const fs = require("fs");
+
 app.listen(port, () => {
 console.log(`myapp is listening on port ${port}!`);
 });
@@ -19,12 +21,29 @@ app.get("/", (req, res) => {
 app.post('/contact', (req, res) => {
   const { firstName, lastName, email, message, contactReason, timestamp } = req.body;
 
-  if (!firstName || !lastName || !email || !message || !contactReason) { // backend validation for added security (js frontend could be bypassed)
+  if (!firstName || !lastName || !email || !message || !contactReason) {
     return res.status(400).json({ success: false, error: 'Missing required fields' });
   }
 
   console.log('Received contact form:', req.body);
 
-  // Send success response
+  let usersjson = fs.readFileSync("public/contact.json", "utf-8");
+  let users;
+
+  try {
+    users = JSON.parse(usersjson);
+    if (!users.contactFormSubmissions) {
+      users.contactFormSubmissions = [];
+    }
+  } catch (err) {
+    users = { contactFormSubmissions: [] };
+  }
+
+  // Push new submission inside the array
+  users.contactFormSubmissions.push(req.body);
+
+  // Write it back to file
+  fs.writeFileSync("public/contact.json", JSON.stringify(users, null, 2), "utf-8");
+
   res.json({ success: true });
 });
