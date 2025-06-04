@@ -26,7 +26,7 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
     };
 
  // Send form data to server (GET NEDAS TO HELP WITH THIS)
-    fetch('/Users/university/Desktop/WebDevC10/app.js', {
+    fetch('/contact', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

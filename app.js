@@ -16,3 +16,15 @@ app.get("/", (req, res) => {
     });
 });
 
+app.post('/contact', (req, res) => {
+  const { firstName, lastName, email, message, contactReason, timestamp } = req.body;
+
+  if (!firstName || !lastName || !email || !message || !contactReason) { // backend validation for added security (js frontend could be bypassed)
+    return res.status(400).json({ success: false, error: 'Missing required fields' });
+  }
+
+  console.log('Received contact form:', req.body);
+
+  // Send success response
+  res.json({ success: true });
+});
