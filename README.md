@@ -6,9 +6,9 @@
 
 * The required packages *should* install when you run the program but to be sure run ```npm install express pg express-session dotenv``` in your terminal in vscode (cmd/ctrl + shift + p type: "create new terminal")to install the new required packages
 
-* Next up as we all have different database usernames and passwords I've set up a .environment you need to
+* Next up as we all have different database usernames and passwords I've set up a .environment you need to do the following:
 
-* 1. Create a file ".env" in your root folder (mainProject)
+* 1. Create a file ".env" in your root folder (mainProject) as shown here (gitignore is used later)
      ![Screenshot 2025-06-06 at 02 55 32](https://github.com/user-attachments/assets/bdf1551f-5d39-4dca-b844-89aa2cbdfdee)
 
 
