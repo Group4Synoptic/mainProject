@@ -18,7 +18,6 @@ const pool = new Pool({
 
 pool.query('SET search_path TO "synopticProjectRegistration";');
 
-
 const session = require('express-session');
 
 app.use(session({
