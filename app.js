@@ -16,6 +16,9 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
+pool.query('SET search_path TO "synopticProjectRegistration";');
+
+
 const session = require('express-session');
 
 app.use(session({
