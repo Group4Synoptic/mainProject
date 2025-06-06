@@ -28,7 +28,10 @@
 
 ## Login System
 
-* The login system is really basic as of right now as it took a while to get everything working, I've currently just added simple buttons on index.html with no styling. But to summarise currently all the login system does is take the users data (user + pass) and stores it in the database checking basic info such as the username not already existing.
+* The login system is really basic as of right now as it took a while to get everything working, I've currently just added simple buttons on index.html with no styling. But to summarise: 
+          *Registration: takes the users data (user + pass) and stores it in the database checking basic info such as the username not already existing.
+          *Login: Checks the users entered data vs the database to check if there is a match
+          *Sessions: Using [express-session](https://www.npmjs.com/package/express-session) to create a session inside the browser allowing the user to stay logged in     
     * *I'll leave the styling to someone else and focus on functionality*
     *  We may be able to make this more complex if there's reason to do so based on our previous modules.
 
