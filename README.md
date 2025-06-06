@@ -49,9 +49,9 @@
 
 * As a test harness I've added a piece of text saying "Welcome Guest"(No user logged in) or "Welcome [username]"(When logged in) this is located in [index.html](public/index.html) under the id "welcome-message" *in case anyone wants to style it or remove it* - I added it to test that sessions were working correctly
 
-* Changed the structure of the directory so we now have css, js and json files just to make everything a bit neater
+* Changed the structure of the directory so we now have css, js and json folders containing their respective files just to make everything a bit neater
 
-* Missing hamburgers added for mobile users
+* Missing hamburgers + js for hamburger functionality on certain pages added for mobile users
 
 ### Notes
 
