@@ -41,6 +41,10 @@ app.get("/", (req, res) => {
     });
 });
 
+/* 
+    CONTACT PAGE ROUTING
+*/
+
 // route for contact page
 app.post('/contact', (req, res) => {
     const { firstName, lastName, email, message, contactReason, timestamp } = req.body;
@@ -71,6 +75,13 @@ app.post('/contact', (req, res) => {
 
     res.json({ success: true });
 });
+
+
+/* 
+
+REGISTRATION + LOGIN ROUTING  
+
+*/
 
 // route for register page
 app.post('/register', async (req, res) => {
@@ -160,5 +171,31 @@ app.get('/session', (req, res) => {
     res.json({ loggedIn: true, username: req.session.user.username });
   } else {
     res.json({ loggedIn: false });
+  }
+});
+
+/* 
+    WATER REQUEST ROUTE
+*/
+
+app.post('/api/request-water', async (req, res) => {
+  const { litres, urgency, contact } = req.body;
+
+  if (!litres || !urgency || !contact) {
+    return res.status(400).json({ message: 'Missing required fields' });
+  }
+
+  try {
+    await pool.query('SET search_path TO "synopticProjectRegistration";');
+    await pool.query(
+      `INSERT INTO water_requests (litres, urgency, contact_info)
+       VALUES ($1, $2, $3)`,
+      [litres, urgency, contact]
+    );
+
+    res.json({ message: 'Water request submitted!' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
   }
 });
