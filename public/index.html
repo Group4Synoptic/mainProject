@@ -9,8 +9,10 @@
   <title>ECO4ROWTH - Smart Water Monitoring</title>
 
   <!-- Link to the main CSS & JS files -->
-  <link rel="stylesheet" href="design.css" /> 
-  <script src="getData.js" defer></script> 
+  <link rel="stylesheet" href="css/design.css" /> 
+  <script src="js/getData.js" defer></script> 
+  <script src="js/login.js"></script>
+  <script src="js/session.js"></script>
 </head>
 
 <body>
@@ -21,7 +23,18 @@
       <p>Real-time insights, leak alerts, and community energy management — all in one platform.</p>
       <a href="WD.html" class="hero-btn">View Water Dashboard</a>
     </div>
+
+      <!-- LOGIN BUTTON-->
+    <button id="registerBtn">Register</button>
+    <button id="loginBtn">Login</button>
+    <button id="logoutBtn">Logout</button>
+
+    <h1 id="welcome-message">Loading...</h1>
+
   </section>
+
+
+
 
   <!-- NAVIGATION SECTION (Appears below banner, sticks on scroll) -->
   <nav class="nav-wrapper" id="navbar">
@@ -32,6 +45,7 @@
           <img src="assets/logo.png" alt="Logo" class="logo-image" />
         </a>
       </div>
+    <!-- TODO CHANGE AS DESIRED -->
 
             <!-- HAMBURGER (Mobile) -->
       <span id="hamburger" class="hamburger" aria-label="Toggle menu">&#9776;</span>

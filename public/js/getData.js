@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (climateContainer && energyContainer && hungerContainer) {
     // Fetch the data from our app.json file.
     // This file contains all the information about our goals.
-    fetch('app.json')
+    fetch('json/app.json')
       .then(response => response.json())
       .then(data => {
         // Get the array of goals from the data.
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const climateSection = document.querySelector('#ClimateSection');
   if (climateSection) {
     // Fetch the climate data from app.json.
-    fetch('app.json')
+    fetch('json/app.json')
       .then(res => res.json())
       .then(data => {
         // For each climate item, create a card and add it to the page.
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const wdSection = document.querySelector('#WDSection');
   if (wdSection) {
     // Fetch the water demand data from app.json.
-    fetch('app.json')
+    fetch('json/app.json')
       .then(res => res.json())
       .then(data => {
         // For each water demand item, create a card and add it to the page.
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const teamSection = document.querySelector(".team-section");
   if (teamSection && popup) {
     // Fetch the team data from app.json.
-    fetch("app.json")
+    fetch("json/app.json")
       .then(res => res.json())
       .then(data => {
         // Remove any default HTML inside the team section.

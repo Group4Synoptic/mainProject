@@ -251,7 +251,7 @@ justify-content: center;
 ------------------------------------------- */
 .hero {
     font-family: michroma, sans-serif;
-    background-image: url('assets/header2.jpeg');
+    background-image: url('../assets/header2.jpeg');
     background-size: cover;     /* Ensures the image covers the hero area */
     background-position: center;
     text-align: center;
