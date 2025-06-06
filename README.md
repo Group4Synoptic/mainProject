@@ -38,6 +38,16 @@
 
 * Contacts page now has full json functionality, user's messages' are sent to the json file [contacts.json](public/json/contact.json)
 
+## Water Trading page
+
+* Dev started
+
+* DB added - everyone needs to delete the old schema, synopticProjectRegistration, and copy and paste the new [schema.sql](schema.sql) into the query tool on pgadmin
+
+* Form added - takes in req water, urgency, contact details
+
+* DB stores aforementioned data on submission
+
 ## Additional Features/Fixes
 
 * As a test harness I've added a piece of text saying "Welcome Guest"(No user logged in) or "Welcome [username]"(When logged in) this is located in [index.html](public/index.html) under the id "welcome-message" *in case anyone wants to style it or remove it* - I added it to test that sessions were working correctly
