@@ -4,7 +4,7 @@
 
 * To set up the database use the [schema.sql](schema.sql) file inside of your pgadmin (should be able to drag it in but you may have to open query tool then paste it in)
 
-* The required packages *should* install when you run the program but to be sure run ```npm install express pg express-session dotenv``` to install the new required packages
+* The required packages *should* install when you run the program but to be sure run ```npm install express pg express-session dotenv``` in your terminal in vscode (cmd/ctrl + shift + p type: "create new terminal")to install the new required packages
 
 * Next up as we all have different database usernames and passwords I've set up a .environment you need to
 
