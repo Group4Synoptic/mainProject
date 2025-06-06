@@ -23,12 +23,14 @@
 * 3. Add that file to gitignore:
     * In VScode: cmd/ctrl + shift + p type: "create new terminal" Enter
     * "code .gitignore"
-    * in the file that pops up, ".gitignore" add ".env" to it - this means that we won't be sharing our personal passwords between each other but should all have a baseline level of access to simulate the website *we could make this more of a live database where all of us can access it but that's more work - let me know, I could try*
+    * in the file that pops up, ".gitignore", add ".env" to it - this means that we won't be sharing our personal passwords between each other but should all have a baseline level of access to simulate the website
+    *      *we could make this more of a live database where all of us can access it but that's more work and probably not required for the end solution- let me know, I could try*
 
 ## Login System
 
-* The login system is really basic as of right now as it took a while to get everything working, I've currently just added simple buttons on index.html with no styling 
+* The login system is really basic as of right now as it took a while to get everything working, I've currently just added simple buttons on index.html with no styling. But to summarise currently all the login system does is take the users data (user + pass) and stores it in the database checking basic info such as the username not already existing.
     * *I'll leave the styling to someone else and focus on functionality*
+    *  We may be able to make this more complex if there's reason to do so based on our previous modules.
 
 * These buttons redirect to their related page e.g the login button redirects to [login.html](public/login.html) and the register button to [register.html](public/register.html) 
     * Again, these pages have *no styling* let me know if any of this needs to be changed functionality wise.
