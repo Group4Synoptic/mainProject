@@ -38,7 +38,7 @@
 * These buttons redirect to their related page e.g the login button redirects to [login.html](public/login.html) and the register button to [register.html](public/register.html) 
     * Again, these pages have *no styling* let me know if any of this needs to be changed functionality wise.
 
-*Sessions are working as intended, users can leave the page and return to it and their details should be saved for a day
+* Sessions are working as intended, users can leave the page and return to it and their details should be saved for a day
  
      * *this can be adjusted if you guys think that's not long enough/too long*
 
