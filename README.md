@@ -24,7 +24,7 @@
     * In VScode: cmd/ctrl + shift + p type: "create new terminal" Enter
     * "code .gitignore"
     * in the file that pops up, ".gitignore", add ".env" to it - this means that we won't be sharing our personal passwords between each other but should all have a baseline level of access to simulate the website
-    *      *we could make this more of a live database where all of us can access it but that's more work and probably not required for the end solution- let me know, I could try*
+          *we could make this more of a live database where all of us can access it but that's more work and probably not required for the end solution- let me know, I could try*
 
 ## Login System
 
