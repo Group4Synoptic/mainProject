@@ -8,7 +8,8 @@
 
 * Next up as we all have different database usernames and passwords I've set up a .environment you need to
 
-* 1. Create a file ".env" in your root folder (mainProject)
+* 1. Create a file ".env" in your root folder (mainProject) ![Screenshot 2025-06-06 at 02 55 32](https://github.com/user-attachments/assets/bdf1551f-5d39-4dca-b844-89aa2cbdfdee)
+
 
 * 2. Add the following to that file: 
     ```
