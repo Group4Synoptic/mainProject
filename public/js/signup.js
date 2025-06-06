@@ -56,7 +56,7 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
 document.addEventListener("DOMContentLoaded", function () {
     const infoSection = document.querySelector(".info-section");
 
-    fetch("info.json")
+    fetch("json/info.json")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to load info.json");
