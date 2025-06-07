@@ -26,7 +26,15 @@ html {
 }
 
 /* Typography - clear and consistent structure */
-h1, h2 {
+h1 {
+  font-family: 'Michroma', sans-serif;
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h2 {
   font-family: 'Michroma', sans-serif;
   color: var(--primary-color);
   font-size: 2rem;
@@ -779,4 +787,29 @@ footer p {
 .menu .dropdown-content a:hover {
   background: var(--highlight-yellow);
   color: var(--black);
+}
+
+#loginBtn, #registerBtn, #logoutBtn {
+  display: inline-block;
+  background-color: var(--highlight-yellow);
+  color: var(--black);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#loginBtn:hover, #registerBtn:hover, #logoutBtn:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Optional: Style the welcome message */
+#welcome-message {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-top: 20px;
 }
