@@ -3,17 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="js/login.js"></script>
+    <meta name="description" content="Login to ECO4ROWTH">
+    <meta name="keywords" content="Login, ECO4ROWTH, Authentication">
+    <meta name="author" content="ECO4ROWTH Team">
+    <title>Login | ECO4ROWTH</title>
+    
+    <!-- Link to authentication styles -->
+    <link rel="stylesheet" href="css/auth-styles.css">
+    
+    <!-- Login JavaScript -->
+    <script src="js/login.js" defer></script>
 </head>
 <body>
-    <form id="loginForm">
-        <input type="text" name="username" placeholder="Username" required />
-        <input type="password" name="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-    </form>
+    <!-- Main authentication container -->
+    <div class="auth-container">
+        <!-- Header section -->
+        <div class="auth-header">
+            <h1 class="auth-title">Welcome Back</h1>
+            <p class="auth-subtitle">Sign in to your ECO4ROWTH account</p>
+        </div>
 
-    <div id="loginMessage"></div>
+        <!-- Login form -->
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Enter your username" required />
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Enter your password" required />
+            </div>
+            
+            <button type="submit">Sign In</button>
+        </form>
 
+        <!-- Login message display -->
+        <div id="loginMessage"></div>
+
+        <!-- Additional links -->
+        <div class="auth-links">
+            <p>Don't have an account? <a href="register.html">Create one here</a></p>
+            <p><a href="index.html">← Back to Home</a></p>
+        </div>
+    </div>
+
+    <!-- Brand footer -->
+    <div class="brand-footer">
+        <p>© 2025 <a href="index.html">ECO4ROWTH</a> - Empowering Sustainable Growth</p>
+    </div>
+
+    <script>
+        // Enhanced form interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm');
+            const messageDiv = document.getElementById('loginMessage');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            
+            // Add input focus effects
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('focused');
+                });
+            });
+
+            // Enhanced message display
+            function showMessage(message, type) {
+                messageDiv.textContent = message;
+                messageDiv.className = `show ${type}`;
+                
+                // Auto-hide success messages
+                if (type === 'success') {
+                    setTimeout(() => {
+                        messageDiv.classList.remove('show');
+                    }, 3000);
+                }
+            }
+
+            // Enhanced form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Add loading state
+                submitBtn.classList.add('loading');
+                submitBtn.textContent = 'Signing In...';
+                
+                // Simulate processing delay
+                setTimeout(() => {
+                    // Your login logic here
+                    // For now, just show a success message
+                    showMessage('Login successful! Redirecting...', 'success');
+                    
+                    // Reset button
+                    submitBtn.classList.remove('loading');
+                    submitBtn.textContent = 'Sign In';
+                    
+                    // Redirect after successful login
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                }, 1000);
+            });
+        });
+    </script>
 </body>
 </html>
