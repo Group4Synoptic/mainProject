@@ -85,24 +85,32 @@ REGISTRATION + LOGIN ROUTING
 
 // route for register page
 app.post('/register', async (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, confirmPassword, email } = req.body;
+  console.log(req.body)
+  if (!username || !password || !confirmPassword || !email) {
+    return res.status(400).json({ success: false, error: 'Missing fields' });
+  }
 
-  if (!username || !password) return res.status(400).json({ success: false, error: 'Missing fields' });
+  if (password !== confirmPassword) {
+    return res.status(400).json({ success: false, error: 'Passwords do not match' });
+  }
 
   try {
     const userExists = await pool.query(
-        `SELECT * FROM "synopticProjectRegistration".users WHERE username = $1`,
-        [username]
+        `SELECT * FROM "synopticProjectRegistration".users WHERE username = $1 OR email = $2`,
+        [username, email]
     );
 
     if (userExists.rows.length > 0) {
-        return res.status(400).json({ success: false, error: 'Username already exists' });
+        return res.status(400).json({ success: false, error: 'Username or email already exists' });
     }
 
     const result = await pool.query(
-        `INSERT INTO "synopticProjectRegistration".users (username, password) VALUES ($1, $2) RETURNING id`,
-        [username, password]
-    );
+        `INSERT INTO "synopticProjectRegistration".users (username, password, email) VALUES ($1, $2, $3) RETURNING id`,
+        [username, password, email]
+    )
+    console.log("Insert successful")
+    ;
 
     res.json({ success: true, userId: result.rows[0].id });
   } catch (err) {
